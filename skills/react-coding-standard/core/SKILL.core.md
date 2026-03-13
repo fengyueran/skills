@@ -19,18 +19,20 @@ description: "基于 React 官方 Rules of React 应用 React 编码规范。用
 3. 让 React 调用组件和 Hook，不要直接调用组件函数。
 4. 只在 React 组件或自定义 Hook 的顶层调用 Hook。
 5. 仅在渲染后需要与外部系统同步时使用 `useEffect`。
+6. 先判断是否保持单组件，再决定提取 custom hook、子组件或其他更合适的组织模式。
 
 ## 按任务类型使用
 
 ### 编写或重构
 
-- 读取 `references/react-coding-standard.md` 的第 1 到第 7 节。
+- 读取 `references/react-coding-standard.md` 的第 1 到第 8 节。
 - 优先在 render 时做简单计算，避免引入不必要的 state 和 Effect。
 - 保持逻辑局部、可预测。
+- 对组件拆分按以下顺序判断：单组件 -> custom hook -> 子组件 -> 其他更重的模式
 
 ### 评审
 
-- 读取 `references/react-coding-standard.md` 第 8 节的评审清单。
+- 读取 `references/react-coding-standard.md` 第 9 节的评审清单。
 - 只指出违反规范或高度可能违反规范的代码。
 - 优先关注行为和正确性问题，而不是个人风格偏好。
 

@@ -1,0 +1,7 @@
+interface:
+  display_name: "React 模式指南"
+  short_description: "选择合适的 React 组织模式"
+  default_prompt: "使用 $react-patterns 为当前任务选择合适的 React 组件、Hook、状态和组合模式。"
+
+policy:
+  allow_implicit_invocation: true

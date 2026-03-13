@@ -15,11 +15,13 @@ description: "基于 React 官方 Rules of React 应用 React 编码规范。用
    - props、state 和 Hook 输入的不可变性
    - Hook 的调用位置和顺序
    - `useEffect` 的正确使用
+   - 组件拆分策略与模式选择
 3. 编写代码时：
    - 保持 render 无副作用
    - 优先在 render 中做普通计算，而不是滥用 `useEffect`
    - 用户动作触发的逻辑优先放在事件处理函数中，而不是 Effect 中
    - 仅在组件或自定义 Hook 的顶层调用 Hook
+   - 先判断是否保持单组件，再考虑提取 custom hook、子组件或其他更合适的组织模式
 4. 评审代码时：
    - 报告违反规范的具体问题
    - 附上文件和行号引用
