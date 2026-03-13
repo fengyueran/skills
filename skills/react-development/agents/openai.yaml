@@ -1,0 +1,7 @@
+interface:
+  display_name: "React 开发入口"
+  short_description: "统一路由 React 相关 skills"
+  default_prompt: "使用 $react-development 判断当前 React 任务应组合哪些 React skills。"
+
+policy:
+  allow_implicit_invocation: true
