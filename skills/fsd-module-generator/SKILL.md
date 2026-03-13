@@ -35,3 +35,5 @@ description: "Generate or extend FSD modules in frontend projects across the six
 - 完整通用流程：`core/SKILL.core.md`
 - Codex 适配：`adapters/codex/SKILL.md`
 - Claude 适配：`adapters/claude/SKILL.md`
+- Antigravity 适配：`adapters/antigravity/SKILL.md`
+- Cursor 适配：`adapters/cursor/SKILL.md`

@@ -1,3 +1,8 @@
+---
+name: "example-skill"
+description: "跨编辑器 skill 模板。用于创建新 skill、验证目录结构、或作为编写新 skills 时的最小参考实现。触发场景包括需要一个基础 skill 骨架、需要查看 core 和 adapters 的组织方式，或需要复制一个兼容多编辑器的起点。"
+---
+
 # example-skill core
 
 ## 目标

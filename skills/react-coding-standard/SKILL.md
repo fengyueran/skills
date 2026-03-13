@@ -31,3 +31,5 @@ description: "基于 React 官方 Rules of React 应用 React 编码规范。用
 - 核心工作流：`core/SKILL.core.md`
 - Codex 适配：`adapters/codex/SKILL.md`
 - Claude 适配：`adapters/claude/SKILL.md`
+- Antigravity 适配：`adapters/antigravity/SKILL.md`
+- Cursor 适配：`adapters/cursor/SKILL.md`
