@@ -1,0 +1,7 @@
+interface:
+  display_name: "React 编码规范"
+  short_description: "按官方规则约束 React 编码"
+  default_prompt: "使用 $react-coding-standard 按 React 官方 Rules of React 编写或评审 React 代码。"
+
+policy:
+  allow_implicit_invocation: true
