@@ -1,4 +1,4 @@
-# fsd-layers-scaffolder (claude adapter)
+# fsd-module-generator (claude adapter)
 
 在 Claude 中执行时：
 

@@ -1,9 +1,9 @@
 ---
-name: "fsd-layers-scaffolder"
-description: "用于在任意前端项目中按 FSD 六层（App、Pages、Widgets、Features、Entities、Shared）创建或扩展模块脚手架。当用户提到“生成 FSD 层”、“创建 app/page/widget/feature/entity/shared”或“按 FSD 新建模块”时触发。"
+name: "fsd-module-generator"
+description: "用于在任意前端项目中按 FSD 六层（App、Pages、Widgets、Features、Entities、Shared）创建或扩展模块。当用户提到“生成 FSD 模块”、“创建 page/widget/feature/entity/shared 模块”、“按 FSD 新建 slice”、“补齐 index.ts 导出”或“检查 FSD 分层边界”时触发。"
 ---
 
-# Goal
+# Generate FSD Module
 
 在当前工作区按 FSD 分层创建/扩展模块骨架，并完成导出注册与边界检查。
 

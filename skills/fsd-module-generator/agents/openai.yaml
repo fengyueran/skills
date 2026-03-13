@@ -1,0 +1,7 @@
+interface:
+  display_name: "FSD Module Generator"
+  short_description: "Generate FSD modules and layer exports"
+  default_prompt: "Use $fsd-module-generator to create or extend an FSD module in this frontend project."
+
+policy:
+  allow_implicit_invocation: true

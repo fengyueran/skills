@@ -1,4 +1,4 @@
-# fsd-layers-scaffolder (codex adapter)
+# fsd-module-generator (codex adapter)
 
 在 Codex 中执行时：
 
