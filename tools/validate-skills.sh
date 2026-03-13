@@ -10,7 +10,7 @@ for dir in skills/*; do
 
   [ -f "$dir/SKILL.md" ] && has_legacy=1
   [ -f "$dir/core/SKILL.core.md" ] && has_core=1
-  if [ -f "$dir/adapters/codex/SKILL.md" ] || [ -f "$dir/adapters/claude/SKILL.md" ]; then
+  if find "$dir/adapters" -mindepth 2 -maxdepth 2 -path '*/SKILL.md' >/dev/null 2>&1; then
     has_adapter=1
   fi
 

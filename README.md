@@ -1,6 +1,6 @@
 # Skills 仓库
 
-这个仓库用于存放可复用的 skills，并通过适配层兼容多个编辑器（如 Codex、Claude）。
+这个仓库用于存放可复用的 skills，并通过适配层兼容多个编辑器（如 Codex、Claude、Antigravity、Cursor）。
 
 ## 目录结构
 
@@ -14,6 +14,8 @@
 - `skills/<skill-name>/core/SKILL.core.md`：编辑器无关的核心流程
 - `skills/<skill-name>/adapters/codex/SKILL.md`：Codex 适配文件
 - `skills/<skill-name>/adapters/claude/SKILL.md`：Claude 适配文件
+- `skills/<skill-name>/adapters/antigravity/SKILL.md`：Antigravity 适配文件
+- `skills/<skill-name>/adapters/cursor/SKILL.md`：Cursor 适配文件
 
 兼容原则：
 
