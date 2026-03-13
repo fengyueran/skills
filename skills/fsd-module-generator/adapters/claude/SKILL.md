@@ -1,3 +1,8 @@
+---
+name: "fsd-module-generator"
+description: "FSD 模块生成 skill 在 Claude 中的适配文件。用于在 Claude 中创建或扩展 FSD 模块、slice 和导出结构，并按当前任务按需读取 references。"
+---
+
 # fsd-module-generator (claude adapter)
 
 在 Claude 中执行时：

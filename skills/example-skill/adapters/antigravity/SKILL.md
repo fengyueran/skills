@@ -1,3 +1,8 @@
+---
+name: "example-skill"
+description: "示例 skill 在 Antigravity 中的适配文件。用于在 Antigravity 中查看或使用多编辑器兼容 skill 的最小模板结构，包括 core 流程与各编辑器 adapters 的组织方式。"
+---
+
 # example-skill (antigravity adapter)
 
 在 Antigravity 中执行时：

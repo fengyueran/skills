@@ -1,3 +1,8 @@
+---
+name: "example-skill"
+description: "示例 skill 在 Cursor 中的适配文件。用于在 Cursor 中查看或使用多编辑器兼容 skill 的最小模板结构，包括 core 流程与各编辑器 adapters 的组织方式。"
+---
+
 # example-skill (cursor adapter)
 
 在 Cursor 中执行时：

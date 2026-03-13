@@ -1,3 +1,8 @@
+---
+name: "react-development"
+description: "React 开发总入口在 Claude 中的适配文件。用于在 Claude 中处理 React 相关任务时，先读取 React skill 路由表，再按任务类型选择 react-coding-standard、react-patterns 或其他更具体的 React skills。"
+---
+
 # react-development（claude 适配）
 
 在 Claude 中：

@@ -1,3 +1,8 @@
+---
+name: "react-development"
+description: "React 开发总入口在 Codex 中的适配文件。用于在 Codex 中处理 React 相关任务时，先读取 React skill 路由表，再按任务类型选择 react-coding-standard、react-patterns 或其他更具体的 React skills。"
+---
+
 # react-development（codex 适配）
 
 在 Codex 中：

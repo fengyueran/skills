@@ -1,3 +1,8 @@
+---
+name: "react-patterns"
+description: "React 模式指南在 Claude 中的适配文件。用于在 Claude 中判断 React 组件组织、Hook 抽取、状态放置、组合方式和现代 React 模式选择。"
+---
+
 # react-patterns（claude 适配）
 
 在 Claude 中：

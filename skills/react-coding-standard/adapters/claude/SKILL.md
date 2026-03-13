@@ -1,3 +1,8 @@
+---
+name: "react-coding-standard"
+description: "React 编码规范在 Claude 中的适配文件。用于在 Claude 中编写、重构、评审或调试 React 组件和自定义 Hook 时，先读取规范文档，再按该规范执行。"
+---
+
 # react-coding-standard（claude 适配）
 
 在 Claude 中：
