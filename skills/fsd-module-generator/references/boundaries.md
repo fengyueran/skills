@@ -20,23 +20,32 @@
 允许依赖方向：
 
 - `shared` -> `shared`
-- `entities` -> `entities`, `shared`
-- `features` -> `features`, `entities`, `shared`
-- `widgets` -> `widgets`, `features`, `entities`, `shared`
-- `pages` -> `pages`, `widgets`, `features`, `entities`, `shared`
+- `entities` -> `shared`
+- `features` -> `entities`, `shared`
+- `widgets` -> `features`, `entities`, `shared`
+- `pages` -> `widgets`, `features`, `entities`, `shared`
 - `app` -> 可组合业务层公开导出的模块/组件（通过各层 index.ts 暴露）
 
 说明：
 
 - `App` 和 `Shared` 是分层例外：各自层内的不同 segment 可以互相引用。
-- `Pages/Widgets/Features/Entities` 应保持 slice 隔离，避免同层随意耦合。
+- `Pages/Widgets/Features/Entities` 一律禁止同层 slice 直接依赖。
+- 若出现同层引用诉求，优先判断是否应：
+  - 拆成当前 slice 内的子组件或 segment
+  - 下沉到 `shared`
+  - 下沉到 `entities`
+  - 提升到更高层由 `pages` 或 `app` 组合
 
 禁止示例：
 
 - `shared` 引用 `entities/features/widgets/pages/app`
+- `entities` 引用其他 `entities` slice
 - `entities` 引用 `features/widgets/pages/app`
+- `features` 引用其他 `features` slice
 - `features` 引用 `widgets/pages/app`
+- `widgets` 引用其他 `widgets` slice
 - `widgets` 引用 `pages/app`
+- `pages` 引用其他 `pages` slice
 
 ## 2. App 层规则
 
@@ -83,6 +92,7 @@
 
 - 编写领域判断分支与业务计算
 - 定义全局业务状态
+- 直接引用其他 `pages` slice
 
 推荐模板：
 
@@ -104,6 +114,7 @@
 
 - 承载完整端到端业务用例
 - 编写应归属 features 的跨场景业务规则
+- 直接引用其他 `widgets` slice
 - 引用 `pages` 或 `app`
 
 推荐模板：
@@ -127,6 +138,7 @@
 禁止：
 
 - 重新定义 entities 已拥有的实体契约
+- 直接引用其他 `features` slice
 - 引用 `widgets/pages/app`
 - 发展为“大而全”的聚合 feature
 
@@ -158,6 +170,7 @@
 禁止：
 
 - 跨页面/跨场景业务编排
+- 直接引用其他 `entities` slice
 - 引用 `features/widgets/pages/app`
 
 推荐模板：
@@ -215,13 +228,15 @@
 1. 新增目录与文件符合层级路径约定
 2. 层级 `index.ts` 已更新且导出路径有效
 3. import 方向符合依赖矩阵
-4. 未引入非 `app` 层默认导出
-5. `pages/shared` 未出现越界业务逻辑
+4. `pages/widgets/features/entities` 未出现同层 slice 直接依赖
+5. 未引入非 `app` 层默认导出
+6. `pages/shared` 未出现越界业务逻辑
 
 建议命令：
 
 ```bash
 rg -n "from ['\"][^'\"]*pages|from ['\"][^'\"]*app" .
+rg -n "from ['\"][^'\"]*(pages|widgets|features|entities)/" .
 rg -n "export default" .
 rg -n "fetch\(|axios\.|request\(" .
 ```
@@ -230,6 +245,12 @@ rg -n "fetch\(|axios\.|request\(" .
 
 - 违规：feature 反向依赖 widget
   - 修复：将共性逻辑下沉到 `entities` 或 `shared`，feature 只保留业务编排
+
+- 违规：widget 直接依赖另一个 widget
+  - 修复：优先拆成当前 widget 内部子组件；若需跨场景复用，下降到 `features/entities/shared`，或提升到 `pages` 编排
+
+- 违规：feature 直接依赖另一个 feature
+  - 修复：将共享能力下沉到 `entities` 或 `shared`，由更高层组合多个 feature
 
 - 违规：page 内实现复杂业务流程
   - 修复：把流程迁移到 `features/[feature-name]/model`，page 只保留组合壳

@@ -24,6 +24,7 @@ description: "用于在任意前端项目中按 FSD 六层（App、Pages、Widge
 
 - slice/模块目录名统一 `kebab-case`（`shared` 的 segment 除外）
 - TypeScript 优先
+- `Pages/Widgets/Features/Entities` 禁止同层 slice 直接依赖
 - UI 主入口优先使用 `ui/index.ts`，仅在存在多个变体时使用语义化文件名（如 `profile-form.tsx`）
 - `App` 与 `Shared` 不创建 slices，直接按 segments 组织
 - `Pages/Widgets/Features/Entities` 先建 slice，再按需要建 segments

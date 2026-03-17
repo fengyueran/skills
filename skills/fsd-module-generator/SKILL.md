@@ -26,6 +26,7 @@ description: "Generate or extend FSD modules in frontend projects across the six
 
 - 模块目录统一使用 `kebab-case`
 - TypeScript 优先
+- `pages/widgets/features/entities` 禁止同层 slice 直接依赖
 - 非 `app` 层禁止 `export default`
 - 公共导出统一走层级 `index.ts`
 - `app` 与 `shared` 直接按 segment 组织，不创建 slice
